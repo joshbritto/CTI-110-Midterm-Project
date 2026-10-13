@@ -1,14 +1,19 @@
 [gd_scene format=3 uid="uid://cdewowf5ikn5x"]
 
 [ext_resource type="Script" uid="uid://c4g88iu5g1gsr" path="res://scripts/killzone.gd" id="1_xlapc"]
+[ext_resource type="AudioStream" uid="uid://dg3qd7e3llsw1" path="res://assets/sounds/hurt.wav" id="2_kl8fp"]
 
 [node name="Killzone" type="Area2D" unique_id=697228808]
 collision_mask = 2
 script = ExtResource("1_xlapc")
 
 [node name="Timer" type="Timer" parent="." unique_id=2103083910]
-wait_time = 0.6
+wait_time = 0.5
 one_shot = true
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=1489595870]
+stream = ExtResource("2_kl8fp")
+bus = &"Music"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
