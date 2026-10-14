@@ -253,6 +253,7 @@ layer_1/tile_data = PackedInt32Array(196604, 0, 15, 262140, 0, 15, 327676, 0, 15
 
 [node name="Killzone" parent="." unique_id=697228808 instance=ExtResource("5_iywne")]
 position = Vector2(-5, 98)
+instakill = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=255577925]
 position = Vector2(5, 16)
@@ -372,6 +373,16 @@ theme_override_font_sizes/font_size = 8
 text = "Press \"Space\" to Jump
 Press \"Down Arrow\" To Roll
 "
+
+[node name="Label3" type="Label" parent="Labels" unique_id=1603683192]
+z_index = 4
+offset_left = 577.0
+offset_top = -48.0
+offset_right = 768.0
+offset_bottom = -18.0
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "Rolling makes you invulnerable"
 
 [node name="Label2" type="Label" parent="Labels" unique_id=355585484]
 z_index = 4

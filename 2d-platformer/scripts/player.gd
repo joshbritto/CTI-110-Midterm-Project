@@ -13,6 +13,7 @@ var coyote = 0
 @onready var roll_timer: Timer = $RollTimer
 @onready var roll_sound: AudioStreamPlayer2D = $RollSound
 @export var dead: bool
+@export var invincible = false
 
 func _physics_process(delta: float) -> void:	
 	# Add the gravity.
@@ -39,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	# Handle Roll
 	if Input.is_action_just_pressed("down"):
 		roll = true
+		invincible = true
 		roll_timer.start()
 		
 	# Play animations
@@ -73,4 +75,5 @@ func _physics_process(delta: float) -> void:
 # Handle Roll Timing
 func _on_timer_timeout() -> void:
 	roll = false
+	invincible = false
 	roll_sound_played = false
